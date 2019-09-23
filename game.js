@@ -24,9 +24,16 @@ stage.addChild(bottomWall);
 stage.addChild(scoreText);
 
 
+function moveWithMouse(e)
+{
+    mousePosition = renderer.plugins.interaction.mouse.global;
+    ufo.position.x = mousePosition.x - 20;
+    ufo.position.y = mousePosition.y - 20;
+}
 
 
-
+ufo.interactive = true;
+ufo.on('mousemove', moveWithMouse);
 
 
 
