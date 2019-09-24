@@ -70,6 +70,50 @@ function moveWalls()
     }
 }
 
+/*
+Function: hitDetection
+Parameter: takes in two sprites 
+Method: Gets the sprites bounds and calculates if those
+        bounds are touching
+Return: True if touching and false if they are not touching. 
+*/
+function hitDetection(sp1, sp2)
+{
+    var sp1Bounds = sp1.getBounds();
+    var sp2Bounds = sp2.getBounds();
+
+
+
+    return sp1Bounds.x + sp1Bounds.width > sp2Bounds.x && 
+            sp1Bounds.x  < sp2Bounds.x + sp2Bounds.width && sp1Bounds.y + 
+            sp1Bounds.height > sp2Bounds.y && sp1Bounds.y < sp2Bounds.y + sp2Bounds.height;
+}
+
+
+/*
+Function: notTouchingWalls
+Parameter: NONE
+Method: Checks if the ufo is touching the top
+        or bottom wall
+Return: True if not touching a wall
+        False if touching a wall
+*/
+function notTouchingWalls()
+{
+    if (hitDetection(ufo,topWall))
+    {
+        return false;
+    }
+    else if (hitDetection(ufo, bottomWall))
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
+
 function animate()
 {
     requestAnimationFrame(animate);
