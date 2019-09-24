@@ -57,7 +57,11 @@ Function: hitDetection
 Parameter: takes in two sprites 
 Method: Gets the sprites bounds and calculates if those
         bounds are touching
-Return: True if touching and false if they are not touching. 
+Return: True if touching and false if they are not touching.
+
+
+****** Got help from code on https://github.com/kittykatattack/learningPixi#collision *****
+
 */
 function hitDetection(sp1, sp2)
 {
